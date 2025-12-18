@@ -37,6 +37,12 @@ Resources:
       # return the logical name of the IGW
       InternetGatewayId: !Ref InternetGateway
 
+  # Route Table
+  PublicRouteTable:
+      Type: AWS::EC2::RouteTable
+      Properties:
+        VpcId: !Ref VPC
+
 Outputs:
   VpcId:
     Value: !Ref VPC
