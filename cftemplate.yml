@@ -29,6 +29,14 @@ Resources:
   InternetGateway:
       Type: AWS::EC2::InternetGateway
 
+  # Attach IGW to VPC
+  VpcGatewayAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref VPC
+      # return the logical name of the IGW
+      InternetGatewayId: !Ref InternetGateway
+
 Outputs:
   VpcId:
     Value: !Ref VPC
