@@ -25,6 +25,10 @@ Resources:
       AvailabilityZone: !Select [1, !GetAZs ""]
       MapPublicIpOnLaunch: true
 
+  # Internet Gateway
+  InternetGateway:
+      Type: AWS::EC2::InternetGateway
+
 Outputs:
   VpcId:
     Value: !Ref VPC
