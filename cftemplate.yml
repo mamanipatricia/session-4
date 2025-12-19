@@ -97,9 +97,9 @@ Resources:
   #       - arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
   # Instance Profile
   # InstanceProfile:
-    Type: AWS::IAM::InstanceProfile
-    Properties:
-      Roles: [!Ref InstanceRole]
+    # Type: AWS::IAM::InstanceProfile
+    # Properties:
+    #   Roles: [!Ref InstanceRole]
   #  Auto Scaling Group with Launch Template
   # LaunchTemplate:
   #   Type: AWS::EC2::LaunchTemplate
