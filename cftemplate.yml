@@ -83,23 +83,23 @@ Resources:
         - IpProtocol: -1
           CidrIp: 0.0.0.0/0
   # IAM Role for EC2
-  # InstanceRole:
-  #   Type: AWS::IAM::Role
-  #   Properties:
-  #     AssumeRolePolicyDocument:
-  #       Version: "2012-10-17"
-  #       Statement:
-  #         - Effect: Allow
-  #           Principal:
-  #             Service: ec2.amazonaws.com
-  #           Action: sts:AssumeRole
-  #     ManagedPolicyArns:
-  #       - arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
+  InstanceRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
   # Instance Profile
-  # InstanceProfile:
-    # Type: AWS::IAM::InstanceProfile
-    # Properties:
-    #   Roles: [!Ref InstanceRole]
+  InstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Roles: [!Ref InstanceRole]
   #  Auto Scaling Group with Launch Template
   # LaunchTemplate:
   #   Type: AWS::EC2::LaunchTemplate
