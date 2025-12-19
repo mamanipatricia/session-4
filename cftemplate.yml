@@ -100,7 +100,7 @@ Resources:
     Type: AWS::IAM::InstanceProfile
     Properties:
       Roles: [!Ref InstanceRole]
-
+  #  Auto Scaling Group with Launch Template
   LaunchTemplate:
     Type: AWS::EC2::LaunchTemplate
     Properties:
